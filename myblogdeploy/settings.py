@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'mf5_=meq3ffkj5t5xbngk2-69=(@utyuq^xmy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', False)
 
-ALLOWED_HOSTS = ['myblog-deploy.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['jaychoi.net']
 
 
 # Application definition
@@ -130,4 +130,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-django_heroku.settings(locals(), allowed_hosts=False)
+django_heroku.settings(locals())
