@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'mf5_=meq3ffkj5t5xbngk2-69=(@utyuq^xmy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', False)
 
-ALLOWED_HOSTS = ['jaychoi.net']
+ALLOWED_HOSTS = ['jaychoi.net', '127.0.0.1:5000', '127.0.0.1:8000']
 
 
 # Application definition
@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'education',
+    'blog',
+    'project',
 ]
 
 MIDDLEWARE = [

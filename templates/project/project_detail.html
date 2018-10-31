@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-Home
+Project
 {% endblock title %}
 <!-- CONTENT -->
 {% block content %}
 <!-- NAVIGATION -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" id="home-nav">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="home-nav">
     <div class="container">
         <a class="navbar-brand" href="{% url 'index' %}">
             <img class="mr-2" src="{% static 'img/favicon.ico' %}" width="30" height="30" alt="">
@@ -17,18 +17,14 @@ Home
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item ml-2 active">
-                    <a class="nav-link" href="{% url 'index' %}">Home</span></a>
-                </li>
-    
                 <li class="nav-item ml-2">
-                    <a class="nav-link" href="{% url 'education:list' %}">Education</a>
-                </li>
-                <li class="nav-item ml-2">
-                    <a class="nav-link" href="{% url 'project:list' %}">Project</a>
+                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ml-2">
                     <a class="nav-link" href="{% url 'blog:list' %}">Blog</a>
+                </li>
+                <li class="nav-item ml-2 active">
+                    <a class="nav-link" href="{% url 'project:list' %}">Project</a>
                 </li>
                 <li class="nav-item dropdown ml-2">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,35 +41,27 @@ Home
     </div>
 </nav>
 <!-- HEADER -->
-<header id="home-header" class="d-flex align-items-center">
+<header id="project-detail-header" class="bg-info d-flex align-items-center">
     <div class="container">
         <div class="row">
             <div class="col-md-6 m-auto text-center text-white">
-                <h1>
-                About Me
-                </h1>
+                <h1>{{ project.title }}</h1>
+                <p class="lead">Initiated: {{ project.init_date }}</p>
             </div>
         </div>
     </div>
 </header>
-<!-- PHOTO SECTION -->
-<section id="photo-section" class="pt-4">
+<!-- PROJECT DETAIL -->
+<section id="project-detail-section" class="pt-4">
     <div class="container">
-        <div class="row align-items-center py-3">
-            <div class="col-md-6">
-                <img class="img-fluid rounded" src="{% static 'img/me.jpg' %}" alt="Image not found">
+        <div class="row p-4">
+            <div class="col-md-9 mx-auto">
+                <img class="img-fluid" src="{{ project.cover.url }}" alt="">
             </div>
-                <div class="col-md-6 text-center pt-3">
-                    <h1>I'm Jay</h1>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, optio!</p>
-                </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="row py-3">
-                <div class="col">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quasi fugiat, quia iste quam exercitationem cumque aspernatur debitis natus cupiditate iure, error eveniet dolorum facilis repudiandae aperiam perspiciatis aliquid delectus odio. Tempora possimus, fuga rem distinctio veritatis perspiciatis numquam autem voluptatem. Accusamus exercitationem vitae saepe? Nemo reprehenderit eos aperiam eligendi.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quasi fugiat, quia iste quam exercitationem cumque aspernatur debitis natus cupiditate iure, error eveniet dolorum facilis repudiandae aperiam perspiciatis aliquid delectus odio. Tempora possimus, fuga rem distinctio veritatis perspiciatis numquam autem voluptatem. Accusamus exercitationem vitae saepe? Nemo reprehenderit eos aperiam eligendi.</p>
+            <div class="row p-4">
+                <div class="col-md-9 mx-auto">
+                    <p>{{ project.body }}</p>
                 </div>
             </div>
         </div>

@@ -8,9 +8,9 @@ from .views import IndexView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
-    # path('blog/', include('blog.urls', namespace='blog')),
-    # path('project/', include('project.urls', namespace='project')),
-    # path('education/', include('education.urls', namespace='education')),
+    path('blog/', include('blog.urls', namespace='blog')),
+    path('project/', include('project.urls', namespace='project')),
+    path('education/', include('education.urls', namespace='education')),
 ]
 
 if settings.DEBUG:
