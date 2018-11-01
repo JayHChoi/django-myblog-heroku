@@ -1,0 +1,65 @@
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" id="home-nav">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'index' %}">
+      <img class="mr-2" src="{% static 'img/favicon.ico' %}" width="30" height="30" alt="">
+      Jay Choi
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li
+          {% if '/' == request.path %}
+          class="nav-item ml-2 active"
+          {% else %}
+          class="nav-item ml-2"
+          {% endif %}
+        >
+          <a class="nav-link" href="{% url 'index' %}">Home</span></a>
+        </li>
+
+        <li
+          {% if 'education' in request.path %}
+          class="nav-item ml-2 active"
+          {% else %}
+          class="nav-item ml-2"
+          {% endif %}
+        >
+          <a class="nav-link" href="{% url 'education:list' %}">Education</a>
+        </li>
+        <li
+          {% if 'project' in request.path %}
+          class="nav-item ml-2 active"
+          {% else %}
+          class="nav-item ml-2"
+          {% endif %}
+        >
+          <a class="nav-link" href="{% url 'project:list' %}">Project</a>
+        </li>
+        <li
+          {% if 'blog' in request.path %}
+          class="nav-item ml-2 active"
+          {% else %}
+          class="nav-item ml-2"
+          {% endif %}
+        >
+          <a class="nav-link" href="{% url 'blog:list' %}">Blog</a>
+        </li>
+        <li class="nav-item dropdown ml-2">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Connect
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="https://www.linkedin.com/in/hyukjae-jay-choi-2a857b160/" target="_blank">LinkedIn</a>
+            <a class="dropdown-item" href="https://github.com/JayHChoi" target="_blank">GitHub</a>
+            <a class="dropdown-item" href="{% static " txt/resume.pdf" %}" target="_blank">Resume</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

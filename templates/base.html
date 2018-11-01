@@ -12,55 +12,23 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <!-- Custom Fonts -->
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/mycustomstyle.css' %}?rand=5">
+    <link rel="stylesheet" href="{% static 'css/mycustomstyle.css' %}?rand=7">
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
     <title>
-        {% block title %}
-        Title
-        {% endblock title %}
+        {% block title %}Title{% endblock title %}
     </title>
 </head>
 
 <body>
+    <!-- NAVIGATION -->
+    {% include 'partials/_navbar.html' %}
+    <!-- HEADER -->
+    {% include 'partials/_header.html' %}
     <!-- CONTENT -->
     {% block content %}
     {% endblock content %}
     <!-- FOOTER -->
-    <footer id="footer" class="bg-dark text-white text-center p-4 mt-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-left">
-                    <p>About This Page</p>
-                    <p class="text-muted">
-                        This website was coded in HTML, CSS, and Django with the help of Bootstrap. It is hosted on a LAMP server from DigitalOcean. The code can be found <a href="#"> here</a>.
-                    </p>
-                </div>
-                <div class="col-md-3 text-left">
-                    <p>Sitemap</p>
-                    <p class="text-muted">
-                        Home <br>
-                        Education <br>
-                        Project <br>
-                        Blog <br>
-                    </p>
-                </div>
-                <div class="col-md-3 text-left">
-                    <p>Connect</p>
-                    <i class="fab fa-twitter fa-2x mx-2"></i>
-                    <i class="fab fa-facebook fa-2x mx-2"></i>
-                    <i class="fab fa-github fa-2x mx-2"></i>
-                    <i class="fab fa-instagram fa-2x mx-2"></i>
-                    <i class="fab fa-linkedin fa-2x mx-2"></i>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col text-center">
-                    <hr class="bg-light">
-                    Copyright &copy; {% now "Y" %} Jay Choi
-                </div>
-            </div>
-        </div>
-    </footer>
+    {% include 'partials/_footer.html' %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

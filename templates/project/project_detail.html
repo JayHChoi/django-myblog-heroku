@@ -5,66 +5,20 @@ Project
 {% endblock title %}
 <!-- CONTENT -->
 {% block content %}
-<!-- NAVIGATION -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="home-nav">
-    <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">
-            <img class="mr-2" src="{% static 'img/favicon.ico' %}" width="30" height="30" alt="">
-            Jay Choi
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item ml-2">
-                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item ml-2">
-                    <a class="nav-link" href="{% url 'blog:list' %}">Blog</a>
-                </li>
-                <li class="nav-item ml-2 active">
-                    <a class="nav-link" href="{% url 'project:list' %}">Project</a>
-                </li>
-                <li class="nav-item dropdown ml-2">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Connect
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="https://www.linkedin.com/in/hyukjae-jay-choi-2a857b160/" target="_blank">LinkedIn</a>
-                        <a class="dropdown-item" href="https://github.com/JayHChoi" target="_blank">GitHub</a>
-                        <a class="dropdown-item" href="{% static "txt/resume.pdf" %}" target="_blank">Resume</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- HEADER -->
-<header id="project-detail-header" class="bg-info d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 m-auto text-center text-white">
-                <h1>{{ project.title }}</h1>
-                <p class="lead">Initiated: {{ project.init_date }}</p>
-            </div>
-        </div>
-    </div>
-</header>
 <!-- PROJECT DETAIL -->
-<section id="project-detail-section" class="pt-4">
-    <div class="container">
-        <div class="row p-4">
-            <div class="col-md-9 mx-auto">
-                <img class="img-fluid" src="{{ project.cover.url }}" alt="">
-            </div>
-            </div>
-            <div class="row p-4">
-                <div class="col-md-9 mx-auto">
-                    <p>{{ project.body }}</p>
-                </div>
-            </div>
-        </div>
+<section id="project-detail-section" class="p-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 mx-auto">
+				<img class="img-fluid" src="{{ project.cover.url }}" alt="">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-9 mx-auto">
+				<p>{{ project.body }}</p>
+			</div>
+		</div>
+	</div>
 </section>
 <!-- HEADER -->
 <!-- HEADER -->

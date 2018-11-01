@@ -1,0 +1,49 @@
+{% if '/' == request.path %}
+<header id="home-header" class="d-flex align-items-center bg-primary mb-4" style="height: 250px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 m-auto text-center text-white">
+        <h1>
+          About Me
+        </h1>
+      </div>
+    </div>
+  </div>
+</header>
+{% elif 'education' in request.path %}
+<header id="education-header" class="d-flex align-items-center bg-success mb-4" style="height: 250px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 m-auto text-center text-white">
+        <h1>
+          Education
+        </h1>
+      </div>
+    </div>
+  </div>
+</header>
+{% elif 'project' in request.path %}
+<header id="project-header" class="d-flex align-items-center bg-warning mb-4" style="height: 250px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 m-auto text-center text-white">
+        <h1>
+          Project
+        </h1>
+      </div>
+    </div>
+  </div>
+</header>
+{% else%}
+<header id="blog-header" class="d-flex align-items-center bg-info mb-4" style="height: 250px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 m-auto text-center text-white">
+        <h1>
+          Blog
+        </h1>
+      </div>
+    </div>
+  </div>
+</header>
+{% endif %}
